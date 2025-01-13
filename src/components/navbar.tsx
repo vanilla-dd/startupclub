@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { LetterPullUp } from "./animated/stagger-pullup";
 import { Button } from "./ui/button";
 import { useWindowScroll } from "react-use";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ButtonAnimated from "./animated/button-animated";
+import { StyledLogo } from "./animated/stagger-pullup";
 
 const Navbar = () => {
   const { y: currentScrollY } = useWindowScroll();
@@ -39,11 +39,7 @@ const Navbar = () => {
     >
       <div className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex items-center justify-between px-2 py-2 md:px-6 md:py-6">
-          <LetterPullUp
-            text="The Startup Club."
-            className="text-start font-SugarPeachy text-lg !leading-none tracking-[-0.02em] md:text-4xl md:leading-[5rem]"
-            onHover={true}
-          />
+          <StyledLogo />
           <div className="hidden items-center justify-center gap-4 md:flex">
             <Button variant="link" className="px-0" asChild>
               <a href="#about">About Us</a>

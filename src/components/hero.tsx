@@ -73,9 +73,14 @@ const Hero = () => {
           </p>
         </div>
         <div className="overflow-y-clip">
-          <ButtonAnimated containerClass="btn mb-2 px-4 py-6 text-xs sm:py-6 sm:text-sm lg:px-8 lg:py-8 lg:text-xl">
-            Join The Movement
-            <ArrowRight className="scale-105 md:scale-125" />
+          <ButtonAnimated
+            containerClass="btn mb-2 group px-4 py-6 text-xs sm:py-6 sm:text-sm lg:px-8 lg:py-8 lg:text-xl"
+            asChild
+          >
+            <a href="https://t.me/+2p31iaNtAxsyN2E1" target="_blank">
+              Join The Movement
+              <ArrowRight className="scale-105 transition-transform group-hover:-rotate-[25deg] md:scale-125" />
+            </a>
           </ButtonAnimated>
         </div>
       </div>

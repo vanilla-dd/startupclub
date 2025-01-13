@@ -71,17 +71,18 @@ function App() {
       <main ref={mainRef} className="h-full min-h-dvh w-full font-ChangaOne">
         <Navbar />
         <Hero />
-        <div className="mt-14"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
         <AboutUs />
-        <div className="mt-14"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
         <Feature />
-        <div className="mt-14"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
         <Event />
-        <div className="mt-14"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
         <Chapter />
-        <div className="h-72 bg-[url('/clikkin_seprator.svg')] bg-contain bg-repeat-x"></div>
+        <div></div>
         <Clikkin />
-        <div className="h-72 rotate-180 bg-[url('/clikkin_seprator.svg')] bg-contain bg-repeat-x"></div>
+        <div></div>
+
         <Footer />
       </main>
     </>
