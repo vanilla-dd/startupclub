@@ -3,7 +3,7 @@ import Telegram from "./logos/telegram";
 
 const Feature = () => {
   return (
-    <div className="container mx-auto space-y-6 px-2 sm:space-y-8 md:space-y-10 lg:space-y-14">
+    <div className="container mx-auto space-y-6 px-2 sm:space-y-8 md:space-y-12 lg:space-y-16 xl:space-y-20">
       <p className="text-center font-ChangaOne text-3xl font-medium text-black sm:text-4xl md:text-5xl lg:text-6xl">
         From{" "}
         <span className="text-transparent underline decoration-dashed underline-offset-4 [-webkit-text-stroke-color:black] [-webkit-text-stroke-width:1px]">

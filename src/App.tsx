@@ -16,6 +16,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const preloaderRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -71,19 +72,18 @@ function App() {
       <main ref={mainRef} className="h-full min-h-dvh w-full font-ChangaOne">
         <Navbar />
         <Hero />
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <AboutUs />
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Feature />
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Event />
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Chapter />
-        <div></div>
-        <Clikkin />
-        <div></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
 
-        <Footer />
+        <Clikkin />
+        <Footer footerRef={footerRef} />
       </main>
     </>
   );
