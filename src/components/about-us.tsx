@@ -25,7 +25,7 @@ const AboutUs = () => {
         provide startups with the resources, community, and expertise they need
         to thrive.
       </p>
-      <img src="/power_of_friendship.svg" alt="" />
+      <img src="/svg/power_of_friendship.svg" alt="" />
     </div>
   );
 };

@@ -58,7 +58,7 @@ const Hero = () => {
             Where innovation meets{" "}
             <span className="group relative rounded-md bg-zinc-300 px-1 text-black">
               <video
-                src="/community.mp4"
+                src="/video/community.mp4"
                 className="group pointer-events-none absolute -top-2 left-1/2 z-50 hidden aspect-video -translate-x-1/2 -translate-y-full overflow-hidden rounded-md object-cover object-bottom group-hover:block"
                 autoPlay
                 loop

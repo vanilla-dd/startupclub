@@ -81,8 +81,8 @@ function App() {
         <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Chapter />
         <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
-
         <Clikkin />
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Footer footerRef={footerRef} />
       </main>
     </>

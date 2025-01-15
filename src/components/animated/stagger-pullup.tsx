@@ -52,14 +52,16 @@ export function LetterPullUp({
   );
 }
 
-export function StyledLogo() {
+export function StyledLogo({ className }: { className?: string }) {
   return (
-    <div className="flex flex-col items-center justify-center font-SugarPeachy text-lg !leading-none tracking-[-0.02em] md:text-3xl">
+    <div
+      className={`${className} flex flex-col items-center justify-center font-SugarPeachy !leading-none tracking-[-0.02em]`}
+    >
       <LetterPullUp text="The Startup" onHover={true} />
       <div className="flex w-full items-center justify-center">
-        <hr className="mr-2 h-px w-full bg-[#d6143f]" />
+        <hr className="mr-2 h-px w-full !bg-[#d6143f]" />
         <LetterPullUp text="Club" onHover={true} />
-        <hr className="ml-2 h-px w-full bg-[#d6143f]" />
+        <hr className="ml-2 h-px w-full !bg-[#d6143f]" />
       </div>
     </div>
   );

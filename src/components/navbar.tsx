@@ -39,7 +39,7 @@ const Navbar = () => {
     >
       <div className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex items-center justify-between px-2 py-2 md:px-6 md:py-6">
-          <StyledLogo />
+          <StyledLogo className="text-lg md:text-3xl" />
           <div className="hidden items-center justify-center gap-4 md:flex">
             <Button variant="link" className="px-0" asChild>
               <a href="#about">About Us</a>
