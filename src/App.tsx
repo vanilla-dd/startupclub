@@ -64,7 +64,7 @@ function App() {
   return (
     <>
       <div
-        className="pointer-events-none fixed inset-0 z-10 bg-black text-background will-change-transform"
+        className="pointer-events-none fixed inset-0 z-[9999] bg-black text-background will-change-transform"
         ref={preloaderRef}
       >
         <Preloader />

@@ -8,11 +8,19 @@ const Clikkin = () => {
           src="/svg/v_sign.svg"
           alt="v sign"
           className="absolute -top-10 left-0 w-10 sm:-left-10 sm:-top-12 md:w-16 lg:-left-24 lg:-top-16 lg:w-20"
+          loading="lazy"
         />
         <p>DOWNLOAD</p>
         <p>Our App</p>
       </div>
       <QRCode />
+      {/* <div>
+        <img
+          src="/svg/sunglasses.svg"
+          alt="emoji"
+          className="absolute bottom-full left-10 w-24"
+        />
+      </div> */}
     </div>
   );
 };

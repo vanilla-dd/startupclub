@@ -5,19 +5,35 @@ import { Button } from "./ui/button";
 const Footer = ({ footerRef }: { footerRef: React.Ref<HTMLDivElement> }) => {
   return (
     <div className="relative space-y-10 overflow-clip px-2 pb-6 pt-10 sm:space-y-14 md:space-y-20 md:px-8 md:pb-6 lg:pb-8">
-      <div className="text-center">
-        <p className="text-3xl sm:text-6xl md:text-8xl lg:text-9xl">
-          dummy@gmail.com
-        </p>
+      <div className="grid place-items-center text-center transition-transform hover:translate-y-1 hover:scale-[0.99] hover:opacity-95">
+        <a
+          href="https://qfreeaccountssjc1.az1.qualtrics.com/jfe/form/SV_elzZq31Wkns4UvA"
+          target="_blank"
+          className="text-shadow-large relative inline-block pb-20 text-4xl sm:text-6xl md:text-8xl lg:text-9xl"
+        >
+          Help us tailor the community
+          <img
+            src="/svg/heart.svg"
+            alt="heart"
+            loading="lazy"
+            className="absolute -left-4 -top-6 w-10 -rotate-45 sm:-left-6 sm:w-14 md:-top-8 md:w-20 lg:left-32 xl:-left-10"
+          />
+        </a>
       </div>
-      <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10">
+      <div className="flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-12">
         <p className="text-center text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
-          Stay Connected
+          <span className="px-2 text-transparent underline decoration-dashed underline-offset-8 [-webkit-text-stroke-color:black] [-webkit-text-stroke-width:2px]">
+            Stay
+          </span>{" "}
+          Connected
           <br />
-          Build Together
+          Build{" "}
+          <span className="px-2 text-transparent underline decoration-dashed underline-offset-8 [-webkit-text-stroke-color:black] [-webkit-text-stroke-width:2px]">
+            Together
+          </span>
         </p>
         <ButtonAnimated
-          containerClass="mb-2 group px-4 py-6 text-xs sm:py-6 sm:text-sm lg:px-8 lg:py-8 lg:text-xl"
+          containerClass="group px-4 py-6 text-xs sm:py-6 sm:text-sm lg:px-8 lg:py-8 lg:text-xl"
           asChild
         >
           <a
@@ -29,7 +45,7 @@ const Footer = ({ footerRef }: { footerRef: React.Ref<HTMLDivElement> }) => {
           </a>
         </ButtonAnimated>
         <div className="-mt-72 w-full">
-          <img src="/svg/footer_rocket.svg" alt="rocket" />
+          <img src="/svg/footer_rocket.svg" alt="rocket" loading="lazy" />
         </div>
       </div>
       <div
