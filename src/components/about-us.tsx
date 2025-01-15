@@ -11,7 +11,7 @@ const AboutUs = () => {
     <div
       ref={containerRef}
       id="about"
-      className="container mx-auto -mt-14 flex flex-col items-center justify-center space-y-4 bg-[url(/svg/stars_arrows_mobile.svg)] bg-contain bg-center bg-no-repeat px-2 pt-14 text-black sm:space-y-8 sm:bg-[url(/svg/stars_arrows.svg)] md:space-y-10 md:bg-cover lg:space-y-14"
+      className="container mx-auto flex flex-col items-center justify-center space-y-4 bg-[url(/svg/stars_arrows_mobile.svg)] bg-contain bg-center bg-no-repeat px-2 text-black sm:space-y-8 sm:bg-[url(/svg/stars_arrows.svg)] md:space-y-10 md:bg-cover"
     >
       <p className="text-center font-ChangaOne text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl">
         Together, we{" "}
