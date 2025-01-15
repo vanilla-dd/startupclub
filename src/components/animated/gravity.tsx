@@ -95,7 +95,8 @@ export const MatterBody = ({
 
   useEffect(() => {
     if (!elementRef.current || !context) return;
-    context.registerElement(idRef.current, elementRef.current, {
+    const id = idRef.current;
+    context.registerElement(id, elementRef.current, {
       children,
       matterBodyOptions,
       bodyType,
@@ -107,8 +108,19 @@ export const MatterBody = ({
       ...props,
     });
 
-    return () => context.unregisterElement(idRef.current);
-  }, [props, children, matterBodyOptions, isDraggable]);
+    return () => context.unregisterElement(id);
+  }, [
+    props,
+    children,
+    matterBodyOptions,
+    isDraggable,
+    angle,
+    bodyType,
+    context,
+    sampleLength,
+    x,
+    y,
+  ]);
 
   return (
     <div
@@ -238,6 +250,19 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
       frameId.current = requestAnimationFrame(updateElements);
     }, []);
 
+    const startEngine = useCallback(() => {
+      if (runner.current) {
+        runner.current.enabled = true;
+
+        Runner.run(runner.current, engine.current);
+      }
+      if (render.current) {
+        Render.run(render.current);
+      }
+      frameId.current = requestAnimationFrame(updateElements);
+      isRunning.current = true;
+    }, [updateElements]);
+
     const initializeRenderer = useCallback(() => {
       if (!canvas.current) return;
 
@@ -322,7 +347,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         ).length > 0;
 
       if (grabCursor) {
-        Events.on(engine.current, "beforeUpdate", (event) => {
+        Events.on(engine.current, "beforeUpdate", () => {
           if (canvas.current) {
             if (!mouseDown.current && !touchingMouse()) {
               canvas.current.style.cursor = "default";
@@ -334,7 +359,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
           }
         });
 
-        canvas.current.addEventListener("mousedown", (event) => {
+        canvas.current.addEventListener("mousedown", () => {
           mouseDown.current = true;
 
           if (canvas.current) {
@@ -345,7 +370,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
             }
           }
         });
-        canvas.current.addEventListener("mouseup", (event) => {
+        canvas.current.addEventListener("mouseup", () => {
           mouseDown.current = false;
 
           if (canvas.current) {
@@ -371,7 +396,16 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         runner.current.enabled = true;
         startEngine();
       }
-    }, [updateElements, debug, autoStart]);
+    }, [
+      updateElements,
+      startEngine,
+      debug,
+      autoStart,
+      addTopWall,
+      grabCursor,
+      gravity.x,
+      gravity.y,
+    ]);
 
     // Clear the Matter.js world
     const clearRenderer = useCallback(() => {
@@ -414,19 +448,6 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
       initializeRenderer();
     }, [clearRenderer, initializeRenderer, resetOnResize]);
 
-    const startEngine = useCallback(() => {
-      if (runner.current) {
-        runner.current.enabled = true;
-
-        Runner.run(runner.current, engine.current);
-      }
-      if (render.current) {
-        Render.run(render.current);
-      }
-      frameId.current = requestAnimationFrame(updateElements);
-      isRunning.current = true;
-    }, [updateElements, canvasSize]);
-
     const stopEngine = useCallback(() => {
       if (!isRunning.current) return;
 
@@ -462,7 +483,13 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
       });
       updateElements();
       handleResize();
-    }, []);
+    }, [
+      canvasSize.height,
+      canvasSize.width,
+      handleResize,
+      stopEngine,
+      updateElements,
+    ]);
 
     useImperativeHandle(
       ref,
@@ -471,7 +498,7 @@ const Gravity = forwardRef<GravityRef, GravityProps>(
         stop: stopEngine,
         reset,
       }),
-      [startEngine, stopEngine]
+      [startEngine, stopEngine, reset]
     );
 
     useEffect(() => {
