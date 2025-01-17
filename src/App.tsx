@@ -7,11 +7,10 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import AboutUs from "./components/about-us";
 import Feature from "./components/feature";
-import Event from "./components/event";
-import Chapter from "./components/chapter";
 import Footer from "./components/footer";
 import Clikkin from "./components/clikkin";
-
+import Chapter from "./components/chapter";
+import Event from "./components/event";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
 
   useGSAP(() => {
     const tl = gsap.timeline();
-
     tl.to(preloaderRef.current, {
       scale: 100,
       xPercent: -110,
@@ -32,7 +30,15 @@ function App() {
         preloaderRef.current?.remove();
       },
     })
-      .fromTo(mainRef.current, { opacity: 0 }, { opacity: 1 })
+      .fromTo(
+        mainRef.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        }
+      )
       .to("h1.relative", {
         opacity: 1,
         rotateX: 0,
@@ -41,7 +47,18 @@ function App() {
         duration: 1,
         stagger: 0.125,
       })
-      .fromTo(".btn", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, "-=.25");
+      .fromTo(
+        ".btn",
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          opacity: 1,
+          y: 0,
+        },
+        "-=.25"
+      );
   });
 
   return (
@@ -57,12 +74,12 @@ function App() {
         <Hero />
         <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <AboutUs />
-        <div className="mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Feature />
         <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
-        <Event />
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Chapter />
+        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
+        <Event />
         <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
         <Clikkin />
         <div className="sm:mt-16 md:mt-20 lg:mt-24 xl:mt-28"></div>
