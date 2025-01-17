@@ -26,21 +26,12 @@ importers:
       lenis:
         specifier: ^1.1.18
         version: 1.1.18(react@18.3.1)
-      lodash:
-        specifier: ^4.17.21
-        version: 4.17.21
       lucide-react:
         specifier: ^0.469.0
         version: 0.469.0(react@18.3.1)
-      matter-js:
-        specifier: ^0.20.0
-        version: 0.20.0
       motion:
         specifier: ^11.15.0
         version: 11.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      poly-decomp:
-        specifier: ^0.3.0
-        version: 0.3.0
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -50,9 +41,6 @@ importers:
       react-use:
         specifier: ^17.6.0
         version: 17.6.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      svg-path-commander:
-        specifier: ^2.1.7
-        version: 2.1.7
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -63,12 +51,6 @@ importers:
       '@eslint/js':
         specifier: ^9.17.0
         version: 9.17.0
-      '@types/lodash':
-        specifier: ^4.17.14
-        version: 4.17.14
-      '@types/matter-js':
-        specifier: ^0.19.8
-        version: 0.19.8
       '@types/node':
         specifier: ^22.10.5
         version: 22.10.5
@@ -569,10 +551,6 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@thednp/dommatrix@2.0.11':
-    resolution: {integrity: sha512-e4X97qU68a4ycieaGiRgmeE4KltnV8GPE1pUxdtgvJQBe4VvzL4a6Xxb+X8dI1cQrUVAkl3uSe5nGRXrAmNpkQ==}
-    engines: {node: '>=20', pnpm: '>=8.6.0'}
-
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -593,12 +571,6 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
-
-  '@types/lodash@4.17.14':
-    resolution: {integrity: sha512-jsxagdikDiDBeIRaPYtArcT8my4tN1og7MtMRquFT3XNA6axxyHDRUemqDz/taRDdOUn0GnGHRCuff4q48sW9A==}
-
-  '@types/matter-js@0.19.8':
-    resolution: {integrity: sha512-W2ZWG58Lijv/4v768NgpeyFqqiOyslmAU7qqM1Lhz4XBoUgGtZtPz4CjcOKYtqHIak14dvPldslQhltqLTWwsw==}
 
   '@types/node@22.10.5':
     resolution: {integrity: sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==}
@@ -1130,9 +1102,6 @@ packages:
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
-  lodash@4.17.21:
-    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
@@ -1147,9 +1116,6 @@ packages:
     resolution: {integrity: sha512-28vvUnnKQ/dBwiCQtwJw7QauYnE7yd2Cyp4tTTJpvglX4EMpbflcdBgrgToX2j71B3YvugK/NH3BGUk+E/p/Fw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
-  matter-js@0.20.0:
-    resolution: {integrity: sha512-iC9fYR7zVT3HppNnsFsp9XOoQdQN2tUyfaKg4CHLH8bN+j6GT4Gw7IH2rP0tflAebrHFw730RR3DkVSZRX8hwA==}
 
   mdn-data@2.0.14:
     resolution: {integrity: sha512-dn6wd0uw5GsdswPFfsgMp5NSB0/aDe6fK94YJV/AJDYXL6HVLWBsxeq7js7Ad+mU2K9LAlwpk6kN2D5mwCPVow==}
@@ -1280,9 +1246,6 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
-
-  poly-decomp@0.3.0:
-    resolution: {integrity: sha512-hWeBxGzPYiybmI4548Fca7Up/0k1qS5+79cVHI9+H33dKya5YNb9hxl0ZnDaDgvrZSuYFBhkCK/HOnqN7gefkQ==}
 
   postcss-import@15.1.0:
     resolution: {integrity: sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew==}
@@ -1549,10 +1512,6 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
-
-  svg-path-commander@2.1.7:
-    resolution: {integrity: sha512-mNBf65kpVMACSfJyiCUPHVdEqSL0rq52meFh8RtdadsElaKox0LGWKycV87hFfvSuaunYp0hm7oFey0Vg9i5Uw==}
-    engines: {node: '>=16', pnpm: '>=8.6.0'}
 
   tailwind-merge@2.6.0:
     resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
@@ -2068,8 +2027,6 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.29.1':
     optional: true
 
-  '@thednp/dommatrix@2.0.11': {}
-
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.26.3
@@ -2096,10 +2053,6 @@ snapshots:
   '@types/js-cookie@2.2.7': {}
 
   '@types/json-schema@7.0.15': {}
-
-  '@types/lodash@4.17.14': {}
-
-  '@types/matter-js@0.19.8': {}
 
   '@types/node@22.10.5':
     dependencies:
@@ -2650,8 +2603,6 @@ snapshots:
 
   lodash.merge@4.6.2: {}
 
-  lodash@4.17.21: {}
-
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
@@ -2665,8 +2616,6 @@ snapshots:
   lucide-react@0.469.0(react@18.3.1):
     dependencies:
       react: 18.3.1
-
-  matter-js@0.20.0: {}
 
   mdn-data@2.0.14: {}
 
@@ -2775,8 +2724,6 @@ snapshots:
   pify@2.3.0: {}
 
   pirates@4.0.6: {}
-
-  poly-decomp@0.3.0: {}
 
   postcss-import@15.1.0(postcss@8.4.49):
     dependencies:
@@ -3000,10 +2947,6 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
-
-  svg-path-commander@2.1.7:
-    dependencies:
-      '@thednp/dommatrix': 2.0.11
 
   tailwind-merge@2.6.0: {}
 
