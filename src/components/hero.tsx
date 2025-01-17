@@ -19,21 +19,11 @@ const Hero = () => {
               opacity: 0,
             }}
           >
-            RE
-            <div className="absolute -left-8 top-12 -rotate-[30deg] rounded-sm bg-yellow-400 px-2 py-1 font-Rubik text-xs font-semibold uppercase md:px-4 md:py-2 md:text-sm">
+            Disrupt
+            <div className="absolute -left-6 top-0 -rotate-[30deg] rounded-sm bg-yellow-400 px-2 py-1 font-Rubik text-[10px] font-semibold uppercase sm:text-xs md:-left-8 md:top-12 md:px-4 md:py-2 md:text-sm">
               <span>Innovation</span>
             </div>
-          </h1>
-          <h1
-            className="relative"
-            style={{
-              transform:
-                "perspective(2000px) translate3d(0px, 0px, 0px) rotateX(80deg) skew(-14deg, 0deg)",
-              opacity: 0,
-            }}
-          >
-            THINK
-            <div className="absolute -right-8 bottom-4 -rotate-12 rounded-sm bg-rose-400 px-2 py-1 font-Rubik text-xs font-semibold uppercase md:px-4 md:py-2 md:text-sm">
+            <div className="absolute -bottom-1 -right-6 -rotate-12 rounded-sm bg-rose-400 px-2 py-1 font-Rubik text-[10px] font-semibold uppercase sm:text-xs md:-right-8 md:bottom-4 md:px-4 md:py-2 md:text-sm">
               <span>Funding</span>
             </div>
           </h1>
@@ -46,8 +36,8 @@ const Hero = () => {
             opacity: 0,
           }}
         >
-          STARTUPS
-          <div className="absolute bottom-4 right-0 rotate-6 rounded-sm bg-green-400 px-2 py-1 font-Rubik text-xs font-semibold uppercase md:px-4 md:py-2 md:text-sm">
+          Together
+          <div className="absolute -bottom-1 right-0 rotate-6 rounded-sm bg-green-400 px-2 py-1 font-Rubik text-[10px] font-semibold uppercase sm:text-xs md:bottom-4 md:px-4 md:py-2 md:text-sm">
             <span>Community</span>
           </div>
         </h1>

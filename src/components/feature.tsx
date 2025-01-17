@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Feature = () => {
   return (
-    <div className="container mx-auto space-y-6 px-2 sm:space-y-8 md:space-y-12 lg:space-y-16">
+    <div className="container mx-auto space-y-8 px-2 sm:space-y-10 md:space-y-12 lg:space-y-16">
       <p className="text-center font-ChangaOne text-3xl font-medium text-black sm:text-4xl md:text-5xl lg:text-6xl">
         From{" "}
         <span className="px-px text-transparent underline decoration-dashed underline-offset-4 [-webkit-text-stroke-color:black] [-webkit-text-stroke-width:1px]">
@@ -59,8 +59,13 @@ const Feature = () => {
         <div className="flex h-[300px] w-full max-w-[600px] flex-col justify-between rounded-lg bg-gray-200 transition-transform duration-300 will-change-transform hover:scale-[.99] md:rounded-xl lg:h-[500px]">
           <p className="px-6 pb-3 pt-6 lg:py-6">Take the Lead</p>
           <div className="relative flex flex-1 flex-col items-center justify-center gap-2 px-4 lg:gap-4 lg:px-6">
-            <Button className="self-start lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="relative self-start lg:px-10 lg:py-8 lg:text-2xl">
               Request mentorship
+              <img
+                src="/svg/feature/mentor.svg"
+                alt="mentor"
+                className="absolute left-full w-12 -rotate-12 lg:w-24"
+              />
             </Button>
             <Button className="self-end lg:px-10 lg:py-8 lg:text-2xl">
               Startup Pitch Workshop
@@ -75,15 +80,6 @@ const Feature = () => {
           </div>
         </div>
       </div>
-      {/* <div className="flex h-[300px] w-full max-w-[600px] flex-col justify-between rounded-lg bg-green-100 bg-[url('/whatsapp-bg.png')] bg-[size:100%] bg-center bg-no-repeat bg-blend-lighten transition-all duration-500 will-change-transform hover:scale-[.99] hover:bg-[size:120%] md:rounded-xl lg:h-[500px]">
-        <p className="px-6 py-6">Whatsapp</p>
-        <p className="text-center text-2xl lg:text-5xl">
-          Stay connected with our community in real-time.
-        </p>
-        <div className="self-end px-4 py-4 lg:px-8 lg:py-6">
-          <ButtonAnimated>Join now</ButtonAnimated>
-        </div>
-      </div> */}
     </div>
   );
 };
