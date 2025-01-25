@@ -1,13 +1,23 @@
 import { useState, useEffect } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 
+interface ChapterData {
+  "Chapter Name": string;
+  Avatar: string;
+  "Admin Name": string;
+  "Admin LinkedIn": string;
+  "Chapter Strength": string;
+  WhatsApp: string;
+  Events: string;
+}
+
 const Chapter = () => {
-  const [chapters, setChapters] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [chapters, setChapters] = useState<ChapterData[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const parseCSV = (csvText) => {
+    const parseCSV = (csvText: string): ChapterData[] => {
       const lines = csvText.split("\n");
       const headers = lines[0]
         .split(",")
@@ -19,11 +29,11 @@ const Chapter = () => {
           const values = line
             .split(",")
             .map((value) => value.replace(/['"]+/g, "").trim());
-          const row = {};
+          const row: Partial<ChapterData> = {};
           headers.forEach((header, index) => {
-            row[header] = values[index];
+            row[header as keyof ChapterData] = values[index];
           });
-          return row;
+          return row as ChapterData;
         })
         .filter((row) => Object.values(row).some((value) => value));
     };
@@ -44,7 +54,7 @@ const Chapter = () => {
         setChapters(parsedData);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setError("Failed to load chapters");
+        setError("Failed to load chapters. Please try again later.");
       } finally {
         setLoading(false);
       }
@@ -54,16 +64,20 @@ const Chapter = () => {
   }, []);
 
   return (
-    <div className="container mx-auto space-y-8 px-2 sm:space-y-10 md:space-y-12 lg:space-y-16">
-      <p className="text-center font-ChangaOne text-3xl font-medium text-black sm:text-4xl md:text-5xl lg:text-6xl">
-        Check What we{" "}
-        <span className="px-px text-transparent underline decoration-dashed underline-offset-4 [-webkit-text-stroke-color:black] [-webkit-text-stroke-width:1px]">
-          Cooking
-        </span>
-      </p>
+    <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+      {/* Header Section */}
+      <div className="mb-12 text-center">
+        <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl lg:text-6xl">
+          Our Chapters
+        </h1>
+        <p className="mt-4 text-lg text-gray-600">
+          Explore our vibrant community chapters and join the movement.
+        </p>
+      </div>
 
-      {loading ? (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Loading State */}
+      {loading && (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[1, 2, 3].map((n) => (
             <Card key={n} className="w-full">
               <CardContent className="p-6">
@@ -86,34 +100,50 @@ const Chapter = () => {
             </Card>
           ))}
         </div>
-      ) : error ? (
-        <Card className="mx-auto w-full max-w-2xl">
-          <CardContent className="p-6">
-            <div className="text-red-500">{error}</div>
-          </CardContent>
-        </Card>
-      ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      )}
+
+      {/* Error State */}
+      {error && (
+        <div className="text-center">
+          <p className="mb-4 text-red-500">{error}</p>
+          <button
+            onClick={() => window.location.reload()}
+            className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+          >
+            Retry
+          </button>
+        </div>
+      )}
+
+      {/* Chapters Grid */}
+      {!loading && !error && (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {chapters.map((chapter, index) => (
-            <Card key={index} className="w-full">
+            <Card
+              key={index}
+              className="w-full transition-shadow hover:shadow-lg"
+            >
               <CardHeader>
-                <CardTitle>{chapter["Chapter Name"]}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-gray-900">
+                  {chapter["Chapter Name"]}
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
+                <div className="space-y-4">
+                  {/* Admin Info */}
+                  <div className="flex items-center space-x-4">
                     <img
                       src={chapter["Avatar"]}
                       alt="Chapter Avatar"
                       className="h-16 w-16 rounded-full"
                       onError={(e) => {
-                        e.target.src = `https://ui-avatars.com/api/?name=${chapter["Admin Name"]}`;
-                        e.target.alt = "Placeholder Avatar";
+                        e.currentTarget.src = `https://ui-avatars.com/api/?name=${chapter["Admin Name"]}`;
+                        e.currentTarget.alt = "Placeholder Avatar";
                       }}
                     />
                     <div>
-                      <p className="font-medium">
-                        Admin: {chapter["Admin Name"]}
+                      <p className="font-medium text-gray-900">
+                        {chapter["Admin Name"]}
                       </p>
                       <a
                         href={chapter["Admin LinkedIn"]}
@@ -121,17 +151,17 @@ const Chapter = () => {
                         rel="noopener noreferrer"
                         className="text-blue-600 hover:underline"
                       >
-                        LinkedIn Profile
+                        LinkedIn
                       </a>
                     </div>
                   </div>
 
-                  <div className="mt-4">
-                    <p>
-                      <strong>Chapter Strength:</strong>{" "}
-                      {chapter["Chapter Strength"]}
+                  {/* Chapter Details */}
+                  <div className="space-y-2">
+                    <p className="text-gray-700">
+                      <strong>Strength:</strong> {chapter["Chapter Strength"]}
                     </p>
-                    <p>
+                    <p className="text-gray-700">
                       <strong>WhatsApp:</strong>{" "}
                       <a
                         href={chapter["WhatsApp"]}
@@ -140,7 +170,7 @@ const Chapter = () => {
                         Join Group
                       </a>
                     </p>
-                    <p>
+                    <p className="text-gray-700">
                       <strong>Events:</strong>{" "}
                       <a
                         href={chapter["Events"]}

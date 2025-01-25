@@ -59,13 +59,8 @@ const Feature = () => {
         <div className="flex h-[300px] w-full max-w-[600px] flex-col justify-between rounded-lg bg-gray-200 transition-transform duration-300 will-change-transform hover:scale-[.99] md:rounded-xl lg:h-[500px]">
           <p className="px-6 pb-3 pt-6 lg:py-6">Take the Lead</p>
           <div className="relative flex flex-1 flex-col items-center justify-center gap-2 px-4 lg:gap-4 lg:px-6">
-            <Button className="relative self-start lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="self-start lg:px-10 lg:py-8 lg:text-2xl">
               Request mentorship
-              <img
-                src="/svg/feature/mentor.svg"
-                alt="mentor"
-                className="absolute left-full w-12 -rotate-12 lg:w-24"
-              />
             </Button>
             <Button className="self-end lg:px-10 lg:py-8 lg:text-2xl">
               Startup Pitch Workshop

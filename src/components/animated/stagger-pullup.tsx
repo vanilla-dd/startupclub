@@ -54,15 +54,12 @@ export function LetterPullUp({
 
 export function StyledLogo({ className }: { className?: string }) {
   return (
-    <div
-      className={`${className} flex flex-col items-center justify-center font-SugarPeachy !leading-none tracking-[-0.02em]`}
-    >
-      <LetterPullUp text="The Startup" onHover={true} />
-      <div className="flex w-full items-center justify-center">
-        <hr className="mr-2 h-px w-full !bg-[#d6143f]" />
-        <LetterPullUp text="Club" onHover={true} />
-        <hr className="ml-2 h-px w-full !bg-[#d6143f]" />
-      </div>
-    </div>
+    <a href="/" className={`${className}`}>
+      <img
+        src="/logo.svg"
+        alt="logo"
+        className="w-10 sm:w-12 md:w-16 lg:w-20"
+      />
+    </a>
   );
 }

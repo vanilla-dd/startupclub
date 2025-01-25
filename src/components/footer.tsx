@@ -52,8 +52,8 @@ const Footer = ({ footerRef }: { footerRef: React.Ref<HTMLDivElement> }) => {
         className="flex flex-col justify-center gap-2 px-2 text-xs sm:flex-row sm:items-center sm:justify-between sm:text-sm lg:text-base"
         ref={footerRef}
       >
-        <div className="flex flex-col items-center justify-center gap-2 text-center sm:items-start md:flex-row md:items-baseline md:gap-4">
-          <StyledLogo className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl" />
+        <div className="flex flex-col items-center justify-center gap-2 text-center sm:items-start md:flex-row md:items-center md:gap-4">
+          <StyledLogo />
           <p>© 2024 The Startup Club. All Rights Reserved.</p>
         </div>
         <div>
