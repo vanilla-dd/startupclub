@@ -59,19 +59,21 @@ const Feature = () => {
         <div className="flex h-[300px] w-full max-w-[600px] flex-col justify-between rounded-lg bg-gray-200 transition-transform duration-300 will-change-transform hover:scale-[.99] md:rounded-xl lg:h-[500px]">
           <p className="px-6 pb-3 pt-6 lg:py-6">Take the Lead</p>
           <div className="relative flex flex-1 flex-col items-center justify-center gap-2 px-4 lg:gap-4 lg:px-6">
-            <Button className="self-start lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="rotate-2 self-start lg:px-10 lg:py-8 lg:text-2xl">
               Request mentorship
             </Button>
-            <Button className="self-end lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="-rotate-2 self-end lg:px-10 lg:py-8 lg:text-2xl">
               Startup Pitch Workshop
             </Button>
-            <Button className="self-start lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="rotate-6 self-start lg:px-10 lg:py-8 lg:text-2xl">
               Give Interviewed
             </Button>
-            <Button className="self-end lg:px-10 lg:py-8 lg:text-2xl">
+            <Button className="-rotate-3 self-end lg:px-10 lg:py-8 lg:text-2xl">
               Talent Registry
             </Button>
-            <Button className="lg:px-10 lg:py-8 lg:text-2xl">Volenteer</Button>
+            <Button className="ml-10 -rotate-6 self-start lg:px-10 lg:py-8 lg:text-2xl">
+              Volenteer
+            </Button>
           </div>
         </div>
       </div>
